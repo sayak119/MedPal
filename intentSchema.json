@@ -1,0 +1,543 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "med pal",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "NewMedIntent",
+                    "slots": [
+                        {
+                            "name": "Medication",
+                            "type": "LIST_OF_MEDICATIONS"
+                        },
+                        {
+                            "name": "Dosage",
+                            "type": "LIST_OF_DOSES"
+                        },
+                        {
+                            "name": "Frequency",
+                            "type": "LIST_OF_FREQUENCIES"
+                        },
+                        {
+                            "name": "Duration",
+                            "type": "LIST_OF_DURATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "I am now taking {Dosage} of {Medication}",
+                        "I am taking {Dosage} of {Medication} now",
+                        "I am now taking {Medication}",
+                        "I am taking {Medication} now",
+                        "add {Dosage} of {Medication} to my medications {Duration} to be taken {Frequency}",
+                        "add {Dosage} of {Medication}  {Duration} to be taken {Frequency}",
+                        "add {Dosage} of {Medication} to my medications to be taken {Frequency}",
+                        "add {Dosage} of {Medication} to my schedule to be taken {Frequency}",
+                        "add {Dosage} of {Medication} to be taken {Frequency}",
+                        "add {Dosage} of {Medication} to my medications",
+                        "add {Dosage} of {Medication} to my schedule",
+                        "add {Dosage} of {Medication}",
+                        "add {Medication} to my medications",
+                        "add {Medication} to my schedule",
+                        "add {Medication}"
+                    ]
+                },
+                {
+                    "name": "GetMedsIntent",
+                    "slots": [],
+                    "samples": [
+                        "what do I need to take today",
+                        "what do I need to take",
+                        "what I need to take today",
+                        "what I need to take",
+                        "for my meds",
+                        "tell me what meds I need to take today",
+                        "tell me what meds I need to take"
+                    ]
+                },
+                {
+                    "name": "MedTakenIntent",
+                    "slots": [
+                        {
+                            "name": "Medication",
+                            "type": "LIST_OF_MEDICATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "I have taken my daily {Medication}",
+                        "I have taken my {Medication}",
+                        "I took my daily {Medication}",
+                        "I took my {Medication}",
+                        "I took {Medication}"
+                    ]
+                },
+                {
+                    "name": "GetDosageIntent",
+                    "slots": [
+                        {
+                            "name": "Dosage",
+                            "type": "LIST_OF_DOSES"
+                        }
+                    ],
+                    "samples": [
+                        "I need to take {Dosage}",
+                        "{Dosage}"
+                    ]
+                },
+                {
+                    "name": "GetFrequencyIntent",
+                    "slots": [
+                        {
+                            "name": "Frequency",
+                            "type": "LIST_OF_FREQUENCIES"
+                        }
+                    ],
+                    "samples": [
+                        "I will be taking it {Frequency}",
+                        "{Frequency}"
+                    ]
+                },
+                {
+                    "name": "GetDurationIntent",
+                    "slots": [
+                        {
+                            "name": "Duration",
+                            "type": "LIST_OF_DURATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "for another {Duration}",
+                        "for the next {Duration}",
+                        "for {Duration}",
+                        "{Duration}"
+                    ]
+                },
+                {
+                    "name": "MarkTakenIntent",
+                    "slots": [
+                        {
+                            "name": "Medication",
+                            "type": "LIST_OF_MEDICATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "took my {Medication} today",
+                        "took the {Medication} today",
+                        "took the {Medication}",
+                        "took my {Medication}",
+                        "I took the {Medication} today",
+                        "I took the {Medication}",
+                        "I took my {Medication} today",
+                        "I took my {Medication}"
+                    ]
+                },
+                {
+                    "name": "ReportIntent",
+                    "slots": [
+                        {
+                            "name": "MedDate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "give me a report for {MedDate}",
+                        "for a report on {MedDate}",
+                        "for a report for {MedDate}",
+                        "what happened on {MedDate}",
+                        "report for {MedDate}",
+                        "tell me my report for {MedDate}"
+                    ]
+                },
+                {
+                    "name": "PrepareIntent",
+                    "slots": [
+                        {
+                            "name": "MedDate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "for a list of my meds for {MedDate}",
+                        "list off my medications for {MedDate}",
+                        "list off my meds for {MedDate}",
+                        "what I am taking on {MedDate}",
+                        "what am I taking on {MedDate}",
+                        "report for {MedDate}",
+                        "tell me what I am taking on {MedDate}",
+                        "tell me my medications for {MedDate}",
+                        "tell me my meds for {MedDate}"
+                    ]
+                },
+                {
+                    "name": "ResetRecordIntent",
+                    "slots": [],
+                    "samples": [
+                        "emergency reset for demo purposes"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_MEDICATIONS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "protonix"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "norvasc"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soloft"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ativan"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_FREQUENCIES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yearly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 4 months"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 3 months"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 2 months"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every other month"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "each month"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "monthly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 7 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 6 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 5 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 4 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 3 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 2 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every other week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "each week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weekly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 7 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 6 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 5 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 4 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 3 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every 2 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every other day"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "every day"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "everyday"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "each day"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "daily"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_DURATIONS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "2 years"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "month"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "day"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 months"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 month"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 weeks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 days"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 day"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_DOSES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "25 milligrams"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 pints"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 pint"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 doses"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 dose"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 shots"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 shot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 tablespoons"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 tablespoon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 teaspoons"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 teaspoon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 grams"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 gram"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 injections"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 injection"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 milligrams"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 milligram"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 drops"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 drop"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2 pills"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1 pill"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
