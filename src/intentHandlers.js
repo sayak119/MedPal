@@ -20,6 +20,8 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
       //add a player to the current game,
       //terminate or continue the conversation based on whether the intent
       //is from a one shot command or not.
+      if (intent.slots.Medication.value)
+      {
       currentMedName = intent.slots.Medication.value;
       storage.loadMedList(session, function (medList) {
           var speechOutput = '';
@@ -91,6 +93,18 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
               }
           });
       });
+      }
+      else
+      {
+        var speechOutput,reprompt;
+        speechOutput = 'Please tell me the name of the medicine.';
+        reprompt = 'Please tell me the naame of the medicine to me.';
+         if (reprompt) {
+                    response.ask(speechOutput, reprompt);
+                } else {
+                    response.tell(speechOutput);
+                }
+      }
     };
 
     intentHandlers.GetDosageIntent = function (intent, session, response) {
@@ -117,6 +131,7 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
     probably want to add something to the key, i.e. "medName;yyyy-mm-dd;frequencyTag"
     */
     intentHandlers.GetFrequencyIntent = function (intent, session, response) {
+      if (intent.slots.Frequency.value) {
       storage.loadMedList(session, function (medList) {
         var speechOutput, reprompt;
         currentMedFrequency = intent.slots.Frequency.value;
@@ -128,12 +143,19 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
           response.ask(speechOutput, reprompt);
         });
       });
+      }
+      else
+      {
+        var speechOutput = 'Please tell the frequency of your medication.';
+            response.tell(speechOutput);
+      }
     };
 
     intentHandlers.GetDurationIntent = function (intent, session, response) {
       //add a player to the current game,
       //terminate or continue the conversation based on whether the intent
       //is from a one shot command or not.
+      if (intent.slots.Duration.value) {
       storage.loadMedList(session, function (medList) {
           if (!(currentMedName && currentMedDosage && currentMedFrequency))
           {
@@ -174,6 +196,12 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
               response.tell(speechOutput);
           });
       });
+      }
+      else
+      {
+        var speechOutput = 'Please tell me how long would you liek to take this medicine.';
+            response.ask(speechOutput);
+      }
     };
 
     intentHandlers.GetMedsIntent = function (intent, session, response) {
